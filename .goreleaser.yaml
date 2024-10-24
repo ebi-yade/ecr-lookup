@@ -28,7 +28,6 @@ archives:
       - LICENSE
       - README.md
       - CHANGELOG.md
-      - CREDITS
 
 #snapshot:
 #  name_template: "{{ .Env.NIGHTLY_VERSION }}"
