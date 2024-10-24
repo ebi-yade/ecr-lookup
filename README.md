@@ -33,6 +33,7 @@ The `latest` image will be returned since it's the **first** matching tag **foun
   "repositoryName": "<your-repository-name>"
 }
 ```
+Note: The response is compatible with the [Image object](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_Image.html) from the AWS ECR API.
 
 If none of the specified tags exist, the command will fail with the following error and exit with code 1:
 
