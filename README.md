@@ -3,6 +3,8 @@ Resolves AWS ECR images with prioritized tag-based lookup
 
 ## Installation
 
+You can download the binary from the [releases page](https://github.com/ebi-yade/ecresolve/releases/) or install it using Go:
+
 ```shell
 go install github.com/ebi-yade/ecresolve@latest
 ```
