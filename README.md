@@ -1,7 +1,7 @@
 # ecresolve
 Resolves AWS ECR images with prioritized tag-based lookup
 
-### Installation
+## Installation
 
 ```shell
 go install github.com/ebi-yade/ecresolve@latest
