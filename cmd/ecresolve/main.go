@@ -31,9 +31,13 @@ func main() {
 func main_() error {
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGTERM, syscall.SIGINT)
 	defer stop()
+	gracefulExit := func(i int) {
+		stop()
+		os.Exit(i)
+	}
 
 	var cli CLI
-	kong.Parse(&cli, kong.Vars{kongVersionKey: Version})
+	kong.Parse(&cli, kong.Vars{kongVersionKey: Version}, kong.Exit(gracefulExit))
 
 	// Clean up image revisions (remove leading : if present)
 	for i, rev := range cli.Tags {
