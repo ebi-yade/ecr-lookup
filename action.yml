@@ -56,4 +56,4 @@ runs:
 
         echo "Adding ${RUNNER_TOOL_CACHE}/ecresolve to path..."
         echo "${RUNNER_TOOL_CACHE}/ecresolve" >> $GITHUB_PATH
-        "${RUNNER_TOOL_CACHE}/ecresolve/ecresolve" --help # modify this line after --version is implemented in alecthomas/kong
+        "${RUNNER_TOOL_CACHE}/ecresolve/ecresolve" --version
