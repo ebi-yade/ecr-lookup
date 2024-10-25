@@ -15,12 +15,12 @@ import (
 	"github.com/pkg/errors"
 )
 
+// TODO(ebi): pass the version to kong parser after --version is implemented in kong
 var Version = "(version n/a)"
 
 type CLI struct {
 	ecresolve.Input
 	// Maybe we want to add some more options here like LogLevel, etc.
-	Version bool `name:"version" short:"v" help:"Show version and exit"`
 }
 
 func main() {
@@ -36,10 +36,6 @@ func main_() error {
 
 	var cli CLI
 	kong.Parse(&cli)
-
-	if cli.Version {
-		fmt.Printf("ecresolve %s\n", Version)
-	}
 
 	// Clean up image revisions (remove leading : if present)
 	for i, rev := range cli.Tags {
