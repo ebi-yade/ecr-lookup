@@ -41,3 +41,9 @@ If none of the specified tags exist, the command will fail with the following er
 ecresolve foo bar --repository-name <your-repository-name>
 # 2024/10/24 18:15:02 ERROR error Resolve: no matching images found
 ```
+
+## Contributing
+
+Feel free to open an issue or a pull request if you have any suggestions or improvements in mind.
+
+日本語でのIssueやPRも歓迎です!
