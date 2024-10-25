@@ -1,5 +1,5 @@
 name: Setup ecresolve
-description:
+description: Install ecresolve CLI that resolves AWS ECR images with prioritized tag-based lookup
 inputs:
   version:
     description: "The version to install ecresolve"
