@@ -1,0 +1,11 @@
+name: Action動作確認
+on:
+  push:
+    branches: [ "test/action_install" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./  # ローカルの action.yml を参照
