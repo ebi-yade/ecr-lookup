@@ -15,12 +15,10 @@ import (
 	"github.com/pkg/errors"
 )
 
-var Version = "(version n/a)"
-
 type CLI struct {
 	ecresolve.Input
 	// Maybe we want to add some more options here like LogLevel, etc.
-	Version kong.VersionFlag `short:"v" help:"Show version and exit"`
+	Version VersionFlag `short:"v" help:"Show version and exit"`
 }
 
 func main() {
@@ -35,7 +33,7 @@ func main_() error {
 	defer stop()
 
 	var cli CLI
-	kong.Parse(&cli, kong.Vars{"version": Version})
+	kong.Parse(&cli, kong.Vars{kongVersionKey: Version})
 
 	// Clean up image revisions (remove leading : if present)
 	for i, rev := range cli.Tags {
@@ -53,6 +51,21 @@ func main_() error {
 		return errors.Wrap(err, "error Encode")
 	}
 
+	return nil
+}
+
+// ============================ Version Flag for Kong ============================
+
+var Version = "(dev)"
+
+type VersionFlag kong.VersionFlag
+
+const kongVersionKey = "version"
+
+// BeforeReset writes the version variable and terminates with a 0 exit status.
+func (v VersionFlag) BeforeReset(app *kong.Kong, vars kong.Vars) error {
+	fmt.Fprintf(app.Stdout, "%s %s\n", app.Model.Name, vars[kongVersionKey])
+	app.Exit(0)
 	return nil
 }
 
