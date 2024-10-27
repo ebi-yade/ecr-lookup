@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.0.5](https://github.com/ebi-yade/ecresolve/compare/v0.0.4...v0.0.5) - 2024-10-27
+
 ## [v0.0.4](https://github.com/ebi-yade/ecresolve/compare/v0.0.3...v0.0.4) - 2024-10-25
 
 ## [v0.0.3](https://github.com/ebi-yade/ecresolve/compare/v0.0.2...v0.0.3) - 2024-10-25
