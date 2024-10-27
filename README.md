@@ -4,11 +4,17 @@ Resolves AWS ECR images with prioritized tag-based lookup
 
 ## Installation
 
-### Using Homebrew
+You can install `ecresolve` using Homebrew, from source, or by downloading the binary.
+
+In case you're using Homebrew:
 
 ```shell
 brew install ebi-yade/tap/ecresolve
 ```
+
+<details>
+
+<summary>Other ways</summary>
 
 ### From Source
 
@@ -19,6 +25,8 @@ go install github.com/ebi-yade/ecresolve@latest
 ### Downloading the Binary
 
 You can download the binary from the [releases page](https://github.com/ebi-yade/ecresolve/releases/),
+
+</details>
 
 ## Usage
 
