@@ -19,6 +19,7 @@ type CLI struct {
 	ecresolve.Input
 
 	Version VersionFlag `short:"v" help:"Show version and exit"`
+	Format  string      `short:"f" help:"Output format" enum:"json,tag-only" default:"json"`
 }
 
 func main() {
@@ -45,10 +46,17 @@ func main_() error {
 		return errors.Wrap(err, "error Resolve")
 	}
 
-	encoder := json.NewEncoder(os.Stdout)
-	encoder.SetIndent("", "  ")
-	if err := encoder.Encode(lowerCaseMarshaler{foundImage}); err != nil {
-		return errors.Wrap(err, "error Encode")
+	switch cli.Format {
+	case "tag-only":
+		fmt.Println(*foundImage.ImageId.ImageTag)
+	case "json":
+		encoder := json.NewEncoder(os.Stdout)
+		encoder.SetIndent("", "  ")
+		if err := encoder.Encode(lowerCaseMarshaler{foundImage}); err != nil {
+			return errors.Wrap(err, "error Encode")
+		}
+	default:
+		return errors.Errorf("unsupported format: %s", cli.Format)
 	}
 
 	return nil
