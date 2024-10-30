@@ -58,7 +58,14 @@ If none of the specified tags exist, the command will fail with the following er
 
 ```shell
 ecresolve foo bar --repository-name <your-repository-name>
-# 2024/10/24 18:15:02 ERROR error Resolve: no matching images found
+# stderr -> "2024/10/24 18:15:02 ERROR error Resolve: no matching images found"
+```
+
+Specifying `--format=tag-only` will be helpful if you just want to get the tag name:
+
+```shell
+ecresolve foo latest stable --repository-name <your-repository-name> --format=tag-only
+# stdout -> "latest"
 ```
 
 ## Contributing

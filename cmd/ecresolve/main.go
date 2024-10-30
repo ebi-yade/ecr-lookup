@@ -19,7 +19,7 @@ type CLI struct {
 	ecresolve.Input
 
 	Version VersionFlag `short:"v" help:"Show version and exit"`
-	Format  string      `short:"f" help:"Output format" enum:"json,tag-only" default:"json"`
+	Format  string      `short:"f" help:"Output format [json, tag-only]" default:"json"`
 }
 
 func main() {
