@@ -19,7 +19,7 @@ brew install ebi-yade/tap/ecresolve
 ### From Source
 
 ```shell
-go install github.com/ebi-yade/ecresolve@latest
+go install github.com/ebi-yade/ecresolve/cmd/ecresolve@latest
 ```
 
 ### Downloading the Binary
